@@ -1,7 +1,7 @@
-import { Pool } from 'pg';
+import  pg  from 'pg';
 
 
-const pool = new Pool({
+const pool = new pg.Pool({
     host: 'localhost',
     user: 'postgres',
     password:'postgres',
@@ -9,4 +9,4 @@ const pool = new Pool({
     database:'userinfo',
   })
 
-  export {defaultpool};
+  export default pool;
