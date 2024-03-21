@@ -1,12 +1,13 @@
 import React from 'react'
-import { useAuth0, withAuthenticationRequired} from "@auth0/auth0-react";
+import {  withAuthenticationRequired} from "@auth0/auth0-react";
 import { TextField, Button, CircularProgress } from "@mui/material";
+import { useNavigate } from 'react-router-dom';
 
 function Mainpage() {
-  const {user}=useAuth0();
-  console.log(user)
+  const navigate=useNavigate();
+
   return (
-    <div>
+    <div className='main-container'>
            <div>
         <TextField
           id="outlined-basic"
@@ -16,9 +17,12 @@ function Mainpage() {
           variant="outlined"
         />
       </div>
-      <div>
+      <div className='btn-container'>
         <Button variant="contained" >Save</Button>
+        <Button variant="contained" onClick={()=>navigate('/login')} >Back to Login</Button>
       </div>
+    
+    
     </div>
   )
 }
