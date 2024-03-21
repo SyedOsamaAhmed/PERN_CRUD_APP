@@ -1,18 +1,16 @@
-import React, { Fragment } from "react";
+import {  Button } from "@mui/material";
+import { useAuth0} from "@auth0/auth0-react";
 
-
-import { Button, Container,TextField } from "@mui/material";
-
-function login() {
+function Login() {
+  const {loginWithRedirect}=useAuth0()
   return (
-    <Fragment>
-      <Container>
-        <TextField id="outlined-basic" label="Email" type='text' variant="outlined" />
-        <TextField id="outlined-basic" label="Password" type='password' variant="outlined" />
-        <Button variant="contained">Login</Button>
-      </Container>
-    </Fragment>
+    <div>
+    
+      <div>
+        <Button variant="contained" onClick={()=>loginWithRedirect()}>Signin</Button>
+      </div>
+    </div>
   );
 }
 
-export default login;
+export default Login;
