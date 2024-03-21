@@ -7,6 +7,7 @@ import Login from "./pages/login";
 import "./App.css";
 import Mainpage from "./pages/mainpage";
 
+
 function App() {
   const { error, isAuthenticated} = useAuth0();
 
@@ -16,7 +17,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={isAuthenticated?<Mainpage />:<Login />} />
-      <Route path="/login" element={<Login />} />
+    
    
     </Routes>
   );

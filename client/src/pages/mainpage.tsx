@@ -3,30 +3,25 @@ import { withAuthenticationRequired } from "@auth0/auth0-react";
 import { TextField, Button, CircularProgress } from "@mui/material";
 
 import { useAuth0 } from "@auth0/auth0-react";
-
+import Displaydata from "../components/displaydata";
 
 function Mainpage() {
   const { logout } = useAuth0();
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
 
-
-
-  const onSubmit = async() => {
- 
+  const onSubmit = async () => {
     try {
-      const body={input};
-      console.log(input)
-      console.log(body)
-      const response=await fetch("http://localhost:5000/posts",{
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({
-          'post':input,
-        })
-      })
-      window.location.href='/';
-     
-
+      const body = { input };
+      console.log(input);
+      console.log(body);
+      await fetch("http://localhost:5000/posts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          post: input,
+        }),
+      });
+      window.location.href = "/";
     } catch (err) {
       err instanceof Error
         ? console.error(err.message)
@@ -35,8 +30,6 @@ function Mainpage() {
   };
   return (
     <div className="main-container">
-    
-
       <TextField
         id="outlined-basic"
         label="Input"
@@ -47,12 +40,15 @@ function Mainpage() {
       />
 
       <div className="btn-container">
-        <Button variant="contained"  onClick={onSubmit}>Save</Button>
+        <Button variant="contained" onClick={onSubmit}>
+          Save
+        </Button>
         <Button variant="contained" onClick={() => logout()}>
-         Logout
+          Logout
         </Button>
       </div>
-    
+
+      <Displaydata/>
     </div>
   );
 }
