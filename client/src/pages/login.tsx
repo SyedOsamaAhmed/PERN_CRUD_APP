@@ -2,7 +2,7 @@ import {  Button } from "@mui/material";
 import { useAuth0} from "@auth0/auth0-react";
 
 function Login() {
-  const {loginWithRedirect}=useAuth0()
+  const {loginWithRedirect}=useAuth0();
   return (
     <main className="container">
       

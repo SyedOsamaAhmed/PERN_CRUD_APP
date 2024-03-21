@@ -37,8 +37,8 @@ app.get("/usersdata/:id", (req, res) => {
 
 app.post("/posts", async (req, res) => {
   let values = [];
-
-  client.query(
+console.log(req.body.post)
+   client.query(
     `INSERT INTO userpost (post) VALUES($1)`,
     (values = [req.body.post]),
     (err, result) => {
