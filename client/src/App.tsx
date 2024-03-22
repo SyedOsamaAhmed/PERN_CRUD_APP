@@ -6,17 +6,23 @@ import { useAuth0 } from "@auth0/auth0-react";
 import Login from "./pages/login";
 import "./App.css";
 import Mainpage from "./pages/mainpage";
+import Progressindicator from "./components/progressindicator";
+
 
 
 function App() {
-  const { error, isAuthenticated} = useAuth0();
+  const { error, isAuthenticated,isLoading} = useAuth0();
 
-  if (error) {
-    <div>{error.message}</div>;
-  }
+  error&&
+    <div>Authentication failed!</div>;
+
+    !error&&isLoading&&<><Progressindicator/></>
+
+   
+  
   return (
-    <Routes>
-      <Route path="/" element={isAuthenticated?<Mainpage />:<Login />} />
+   <Routes>
+      { !error&&!isLoading&&<Route path="/" element={isAuthenticated?<Mainpage />:<Login />} />}
     
    
     </Routes>

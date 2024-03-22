@@ -11,9 +11,8 @@ function Mainpage() {
 
   const onSubmit = async () => {
     try {
-      const body = { input };
-      console.log(input);
-      console.log(body);
+   
+     
       await fetch("http://localhost:5000/posts", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
