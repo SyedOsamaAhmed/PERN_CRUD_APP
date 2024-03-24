@@ -34,6 +34,7 @@ Split the terminal in vscode.
 Now to run the backend/server, follow the following steps:
 * **cd server**
 * run **npm install**
+* run **npm i g nodemon**
 * run **nodemon index**
 
 Note: Keep the server and application running.
