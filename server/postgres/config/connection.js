@@ -4,7 +4,7 @@ import pkg from 'pg';
 
 
 const client = new pkg.Client({
-  host: 'localhost',
+  host: '192.168.100.14',
   port: 5432,
   database: 'userinfo',
   user: 'postgres',
