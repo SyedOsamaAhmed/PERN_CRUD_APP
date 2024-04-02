@@ -51,17 +51,17 @@ when using **pgAdmin4 interface**:
 
 * Enter password of installation.
 * Go to servers and then to postgres16.
-* Verify Hostname/address and port.
+* Verify Hostname/address and port in server properties of postgres16.
 * rightclick on Database and select create to create database.
 * Enter name for database and press save button.
-* now find newly created database name and head over  to schemas, then to Tables and right click on the option and select create option, enter name and press save.
+* now find newly created database name and right click on the name and select querytool option,write sql in server/postgres/postgres sql/database.sql for table and execute it.
 
 
 when when using **SQL Shell psql**:
 * Press enter three times.
 * Enter username and password of installation.
 * Enter \l to see all databases.
-* To create database and table, write sql in server/postgres/postgres sql/database.sql.
+* To create database and table, write sql in server/postgres/postgres sql/database.sql and execute it.
 * Enter \c database name.
 * Enter \dt to see usertables.
 
